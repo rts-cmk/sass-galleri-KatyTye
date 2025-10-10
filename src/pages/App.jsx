@@ -35,7 +35,7 @@ function App() {
 			</header>
 
 			<main className="page-content">
-				<RandomImages amount={2} width={300} minAndMax={[375, 425]} />
+				<RandomImages amount={25} width={300} minAndMax={[375, 425]} />
 			</main>
 
 			<footer className="bottom-content">

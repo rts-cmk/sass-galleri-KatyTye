@@ -72,6 +72,7 @@
 			position: absolute
 			margin-top: -51px
 			background: #00000050
+			visibility: var.$showBonus
 			justify-content: space-around
 			width: var.$primary-image-width
 			border-radius: math.floor(var.$primary-border-radius * 2)
@@ -111,7 +112,7 @@
 			list-style-type: none
 			justify-content: center
 
-			&-loading
+			&-loading, &-title
 				display: none
 
 			&-item
