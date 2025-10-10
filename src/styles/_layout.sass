@@ -1,0 +1,141 @@
+@use "variables" as var
+@use "mixin"
+@use 'sass:math'
+
+.top-content
+	padding: 10px 35px 40px
+
+	&__burger-button
+		width: 60px
+		height: 40px
+		padding: 5px
+		cursor: pointer
+		margin-top: 20px
+		background: transparent
+		border-radius: var.$primary-border-radius
+		border: 1px solid var.$secondary-background-color
+
+		@include mixin.phone-mode(min-width)
+
+		&-image
+			width: auto
+			height: 100%
+			opacity: var.$primary-burger-opacity
+
+	&__page-title
+		font-size: 2.25rem
+		padding: 65px 0 0 13vw
+
+		@include mixin.phone-change-text()
+
+	&__page-navigation
+		gap: 20px
+		display: flex
+		flex-wrap: wrap
+		padding: 20px 0 0 13vw
+
+		@include mixin.phone-change-text()
+
+	&__line-break
+		@include mixin.line-Break(10px, 0px)
+
+	&__search-bar
+		width: 100%
+		border: none
+		outline: none
+		padding: 10px
+		font-weight: bold
+		color: var.$primary-text-color
+		font-size: var.$primary-search-font-size
+		border-radius: var.$primary-border-radius
+		background: var.$secondary-background-color
+
+		&:focus
+			outline: 2px solid var.$primary-text-color
+
+	&__phone-hidden-navigation
+		@include mixin.phone-mode()
+
+.page-content
+	width: 100vw
+	padding: 0 35px
+
+	&__image
+		height: auto
+		min-height: 375px
+		width: var.$primary-image-width
+		border-radius: var.$primary-border-radius
+
+		&-menu
+			display: flex
+			padding: 10px
+			position: absolute
+			margin-top: -51px
+			background: #00000050
+			visibility: var.$showBonus
+			justify-content: space-around
+			width: var.$primary-image-width
+			border-radius: math.floor(var.$primary-border-radius * 2)
+
+		&-name
+			bottom: 115%
+			cursor: pointer
+			font-weight: bold
+			position: absolute
+			text-shadow: 0px 0px 15px black
+			color: var.$secondary-text-color
+
+		&-download
+			color: white
+			padding: 5px
+			cursor: pointer
+			font-weight: bold
+			background: #00b21e
+			border-radius: math.round(var.$primary-border-radius)
+
+		&-button
+			border: none
+
+			&:last-child
+				background: transparent
+
+				img
+					width: 25px
+					height: 25px
+					cursor: pointer
+
+		&-list
+			gap: 25px
+			display: flex
+			padding: 25px 0
+			flex-wrap: wrap
+			list-style-type: none
+			justify-content: center
+
+			&-loading, &-title
+				display: none
+
+			&-item
+				height: fit-content
+				transition: transform 0.3s
+
+				&:hover
+					transform: scale(1.05)
+
+.bottom-content
+	gap: 10px
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: 75px 35px 200px
+
+	&__line-break
+		@include mixin.line-Break(0px)
+
+	&__redirect
+		height: fit-content
+		display: inline-block
+
+		&-image
+			width: 15px
+			height: 15px

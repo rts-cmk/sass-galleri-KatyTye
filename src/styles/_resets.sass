@@ -1,0 +1,28 @@
+@use "variables" as var
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	font-family: var.$primary-text-font
+
+p, h1, input
+	color: var.$primary-text-color
+
+body
+	display: flex
+	width: 100vw
+	min-height: 100vh
+	flex-direction: column
+	justify-content: space-between
+	background-color: var.$primary-background-color
+
+a
+	font-weight: bold
+	font-size: 0.95rem
+	transition: color 0.5s
+	text-decoration: none
+	color: var.$primary-link-color
+
+	&:hover
+		color: var.$secondary-link-color
