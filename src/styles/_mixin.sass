@@ -1,0 +1,20 @@
+@use "variables" as var
+$margTop: 10px
+$margBottom: 125px
+$selMode: max-width
+
+@mixin line-Break($margionTop: $margTop, $margionBottom: $margBottom)
+	left: 0
+	height: 2px
+	width: 100vw
+	position: absolute
+	margin: $margionTop 0 $margionBottom 0
+	background-color: var.$secondary-background-color
+
+@mixin phone-mode($selectedMode: $selMode)
+	@media screen and ($selectedMode: 500px)
+		display: none
+
+@mixin phone-change-text()
+	@media screen and (max-width: 500px)
+		padding-left: 0px
